@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Operations Dashboard — Pink Power Cleaning</title>
+<style>
+  :root {
+    --bg: #FCEEF3;
+    --panel: #FFFFFF;
+    --line: #F5CEDD;
+    --ink: #2B1420;
+    --ink-soft: #7A4B5E;
+    --pink: #E6186F;
+    --pink-deep: #A8104F;
+    --pink-tint: #FBD7E6;
+    --amber: #C98A2C;
+    --teal: #2C7A7B;
+    --radius: 16px;
+    --font-display: 'Sora', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .wrap { max-width: 900px; width: 100%; }
+
+  .header { text-align: center; margin-bottom: 40px; }
+  .brand-mark {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-family: var(--font-display); font-weight: 800; font-size: 22px;
+    margin: 0 auto 16px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .subtitle { color: var(--ink-soft); font-size: 15px; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 26px;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(140, 28, 73, 0.14);
+    border-color: var(--pink);
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+    background: var(--accent, var(--pink));
+  }
+  .card-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: var(--pink-tint);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  .card h2 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  .card p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .card .go {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--pink-deep);
+  }
+
+  .card.placeholder {
+    opacity: 0.55;
+    cursor: default;
+  }
+  .card.placeholder:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--line);
+  }
+  .card.placeholder .go { color: var(--ink-soft); }
+
+  .footer-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="brand-mark">PP</div>
+    <h1>Operations Dashboard</h1>
+    <div class="subtitle">Pink Power Cleaning · pick a report to open</div>
+  </div>
+
+  <div class="card-grid">
+    <a class="card" href="Cancellations.html" style="--accent: var(--pink);">
+      <div class="card-icon">📋</div>
+      <h2>Cancellations</h2>
+      <p>Client cancellation reasons, trends, revenue impact, and year-over-year comparisons.</p>
+      <span class="go">Open →</span>
+    </a>
+
+    <a class="card" href="technicians.html" style="--accent: var(--teal);">
+      <div class="card-icon">👤</div>
+      <h2>Terminated Technicians</h2>
+      <p>Tenure flags, turnover trends, and rehire eligibility for departed team members.</p>
+      <span class="go">Open →</span>
+    </a>
+
+    <div class="card placeholder" style="--accent: var(--amber);">
+      <div class="card-icon">➕</div>
+      <h2>More coming</h2>
+      <p>Additional reports (bookings, etc.) can be added to this suite as new cards here.</p>
+      <span class="go">Not yet available</span>
+    </div>
+  </div>
+
+  <div class="footer-note">Internal use only — Pink Power Cleaning</div>
+</div>
+</body>
+</html>
